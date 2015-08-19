@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <title>index</title>
+        <script src="phonegap.js"></script>
+        <script>
+		var url      = 'http://pibaxe.com/frontend/app/';
+		var app = {
+			initialize: function() {  
+				this.bindEvents();
+			},
+			bindEvents: function() {       
+				document.addEventListener('deviceready', this.onDeviceReady, false);
+			},
+			onDeviceReady: function() {
+				//window.open(url, '_self', 'location=no');
+				document.getElementById('webglFrame').src = url;
+			},
+			onResume: function() {
+				console.log('Resumen');
+			}			
+		};
+        </script>
+    </head>
+    <body>
+		<script type="text/javascript">
+        app.initialize();
+        </script>
+        
+        <iframe id="webglFrame" src="" frameborder="0"></iframe>
+        
+    </body>
+</html>
